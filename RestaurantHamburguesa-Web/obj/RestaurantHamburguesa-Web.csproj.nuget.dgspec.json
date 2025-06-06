@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj": {}
+    "C:\\Users\\accre\\Source\\Repos\\RestaurantHamburguesa-Web-Repo\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj": {}
   },
   "projects": {
-    "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj": {
+    "C:\\Users\\accre\\Source\\Repos\\RestaurantHamburguesa-Web-Repo\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj",
+        "projectUniqueName": "C:\\Users\\accre\\Source\\Repos\\RestaurantHamburguesa-Web-Repo\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj",
         "projectName": "RestaurantHamburguesa-Web",
-        "projectPath": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj",
-        "packagesPath": "C:\\Users\\betom\\.nuget\\packages\\",
-        "outputPath": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\obj\\",
+        "projectPath": "C:\\Users\\accre\\Source\\Repos\\RestaurantHamburguesa-Web-Repo\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web.csproj",
+        "packagesPath": "C:\\Users\\accre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\accre\\Source\\Repos\\RestaurantHamburguesa-Web-Repo\\RestaurantHamburguesa-Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\VScode\\Components\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\betom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\accre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -63,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
