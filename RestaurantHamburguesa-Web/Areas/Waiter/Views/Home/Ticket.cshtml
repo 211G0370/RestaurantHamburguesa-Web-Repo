@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mexican Grill - Ticket Mesa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+<body class="ticket-page">
+    <header class="ticket-header">
+        <div class="header-content">
+            <a href="serverIndex.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="ticket-info">
+                <h1>Mesa 5</h1>
+                <p class="ticket-number">Ticket #1234</p>
+            </div>
+
+            <div class="order-status preparing">
+                <span class="status-badge">
+                    <i class="fas fa-fire"></i>
+                    Preparando
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="ticket-container">
+        <div class="order-items">
+            <div class="order-item">
+                <div class="item-main">
+                    <div class="item-quantity">2x</div>
+                    <div class="item-details">
+                        <span class="item-name">Tacos al Pastor</span>
+                    </div>
+                </div>
+                <div class="item-secondary">
+                    <span class="item-price">$60.00</span>
+                    <button class="delete-item" aria-label="Eliminar item">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="order-item">
+                <div class="item-main">
+                    <div class="item-quantity">1x</div>
+                    <div class="item-details">
+                        <span class="item-name">Quesadilla de Pollo</span>
+                    </div>
+                </div>
+                <div class="item-secondary">
+                    <span class="item-price">$45.00</span>
+                    <button class="delete-item" aria-label="Eliminar item">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="order-item">
+                <div class="item-main">
+                    <div class="item-quantity">3x</div>
+                    <div class="item-details">
+                        <span class="item-name">Agua de Jamaica</span>
+                    </div>
+                </div>
+                <div class="item-secondary">
+                    <span class="item-price">$75.00</span>
+                    <button class="delete-item" aria-label="Eliminar item">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button class="add-products-btn">
+            <i class="fas fa-plus"></i>
+            <span>Agregar Productos</span>
+        </button>
+    </main>
+
+    <footer class="ticket-footer">
+        <div class="ticket-summary">
+            <div class="summary-row">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span>$180.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>IVA (16%):</span>
+                    <span>$28.80</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span>$208.80</span>
+                </div>
+            </div>
+            <button class="close-ticket-btn">
+                <i class="fas fa-check-circle"></i>
+                <span>Cerrar Ticket</span>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Dialog para agregar productos -->
+    <dialog id="addProductDialog" class="product-dialog">
+        <header class="dialog-header">
+            <h2>Agregar Productos</h2>
+            <button class="close-dialog" aria-label="Cerrar">
+                <i class="fas fa-times"></i>
+            </button>
+        </header>
+
+        <div class="product-categories">
+            <!-- Categoría Hamburguesas -->
+            <div class="product-category">
+                <div class="category-header" data-category="burgers">
+                    <div class="category-info">
+                        <i class="fas fa-hamburger"></i>
+                        <span>Hamburguesas</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="burgers">
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-hamburger"></i>
+                            <div class="product-details">
+                                <h3>Hamburguesa Clásica</h3>
+                                <p>Carne, lechuga, tomate, queso</p>
+                                <span class="price">$85.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-hamburger"></i>
+                            <div class="product-details">
+                                <h3>Hamburguesa Especial</h3>
+                                <p>Doble carne, tocino, queso, aguacate</p>
+                                <span class="price">$120.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría Papas -->
+            <div class="product-category">
+                <div class="category-header" data-category="fries">
+                    <div class="category-info">
+                        <i class="fas fa-french-fries"></i>
+                        <span>Papas Fritas</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="fries">
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-french-fries"></i>
+                            <div class="product-details">
+                                <h3>Papas Regulares</h3>
+                                <p>Papas fritas crujientes</p>
+                                <span class="price">$45.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-french-fries"></i>
+                            <div class="product-details">
+                                <h3>Papas Supremas</h3>
+                                <p>Con queso, tocino y ranch</p>
+                                <span class="price">$65.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría Bebidas -->
+            <div class="product-category">
+                <div class="category-header" data-category="drinks">
+                    <div class="category-info">
+                        <i class="fas fa-glass-cheers"></i>
+                        <span>Bebidas</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-content" id="drinks">
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-glass"></i>
+                            <div class="product-details">
+                                <h3>Refresco</h3>
+                                <p>Coca-Cola, Sprite, Fanta</p>
+                                <span class="price">$25.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-variant">
+                        <div class="product-info">
+                            <i class="fas fa-glass"></i>
+                            <div class="product-details">
+                                <h3>Agua Fresca</h3>
+                                <p>Jamaica, Horchata, Limón</p>
+                                <span class="price">$30.00</span>
+                            </div>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" data-action="decrease">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   class="quantity-input" />
+                            <button class="quantity-btn" data-action="increase">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="dialog-footer">
+            <button class="cancel-btn">Cancelar</button>
+            <button class="add-btn">Agregar al Ticket</button>
+        </footer>
+    </dialog>
+
+    <script>
+        // Manejo del diálogo de productos
+        const addProductBtn = document.querySelector(".add-products-btn");
+        const dialog = document.getElementById("addProductDialog");
+        const closeDialog = dialog.querySelector(".close-dialog");
+        const cancelBtn = dialog.querySelector(".cancel-btn");
+        const categoryHeaders = dialog.querySelectorAll(".category-header");
+
+        // Abrir diálogo
+        addProductBtn.addEventListener("click", () => {
+            dialog.showModal();
+            document.body.style.overflow = "hidden";
+        });
+
+        // Cerrar diálogo
+        function closeProductDialog() {
+            dialog.close();
+            document.body.style.overflow = "auto";
+        }
+
+        closeDialog.addEventListener("click", closeProductDialog);
+        cancelBtn.addEventListener("click", closeProductDialog);
+
+        // Expandir/colapsar categorías
+        categoryHeaders.forEach((header) => {
+            header.addEventListener("click", () => {
+                const category = header.parentElement;
+                const content = category.querySelector(".category-content");
+                const isExpanded = category.classList.contains("expanded");
+
+                // Cerrar otras categorías
+                document.querySelectorAll(".product-category").forEach((cat) => {
+                    if (cat !== category) {
+                        cat.classList.remove("expanded");
+                    }
+                });
+
+                // Toggle categoría actual
+                category.classList.toggle("expanded");
+                header.querySelector(".fa-chevron-down").style.transform = isExpanded
+                    ? "rotate(0deg)"
+                    : "rotate(180deg)";
+            });
+        });
+
+        // Control de cantidad
+        dialog.querySelectorAll(".quantity-control").forEach((control) => {
+            const input = control.querySelector(".quantity-input");
+            const decreaseBtn = control.querySelector('[data-action="decrease"]');
+            const increaseBtn = control.querySelector('[data-action="increase"]');
+
+            decreaseBtn.addEventListener("click", () => {
+                const currentValue = parseInt(input.value);
+                if (currentValue > 1) {
+                    input.value = currentValue - 1;
+                }
+            });
+
+            increaseBtn.addEventListener("click", () => {
+                const currentValue = parseInt(input.value);
+                if (currentValue < 99) {
+                    input.value = currentValue + 1;
+                }
+            });
+
+            input.addEventListener("change", () => {
+                let value = parseInt(input.value);
+                if (isNaN(value) || value < 1) value = 1;
+                if (value > 99) value = 99;
+                input.value = value;
+            });
+        });
+    </script>
+</body>
+</html>

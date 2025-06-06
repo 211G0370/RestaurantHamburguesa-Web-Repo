@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MexicanGrill - Iniciar Sesión</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+
+</head>
+<body class="login-body">
+    <!-- bckgnd floating icons -->
+    <div class="burger-bg">🍔</div>
+    <div class="burger-bg">🍟</div>
+    <div class="burger-bg">🥤</div>
+
+    <div class="login-container">
+        <div class="logo-section">
+            <div class="logo">
+                <img id="logoImg" src="mexicanBurger.png" alt="Logo">
+            </div>
+            <h1 class="brand-name">Mexican Grill</h1>
+            <p class="subtitle">Sistema de Gestión de Pedidos</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+            <div class="form-group">
+                <label class="form-label">Usuario</label>
+                <input type="text"
+                       id="username"
+                       class="form-input"
+                       placeholder="Ingresa tu usuario"
+                       required
+                       autocomplete="username" />
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password"
+                       id="password"
+                       class="form-input"
+                       placeholder="Ingresa tu contraseña"
+                       required
+                       autocomplete="current-password" />
+
+                <button type="button"
+                        class="password-toggle"
+                        onclick="togglePassword()">
+                </button>
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" class="checkbox" id="remember" />
+                    Recordarme
+                </label>
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">
+                Iniciar Sesión
+            </button>
+
+        </form>
+    </div>
+
+</body>
+</html>

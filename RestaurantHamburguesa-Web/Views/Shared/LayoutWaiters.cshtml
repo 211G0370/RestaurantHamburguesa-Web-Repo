@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mexican Grill - Seleccionar Tabla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1> Mesas</h1>
+    </header>
+
+    <main class="container">
+        @RenderBody();
+    </main>
+
+    <!-- Overlay y Modal para mensajes -->
+    <div class="custom-modal-overlay" id="messageModalOverlay">
+        <div class="custom-modal-content">
+            <h3 id="modalTitle">Mesa Seleccionada</h3>
+            <p id="modalMessage">Cargando información de la mesa...</p>
+            <button id="modalCloseButton">Entendido</button>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="serverIndex.html" class="nav-item active">
+            <i class="fas fa-table"></i>
+            <span>Mesas</span>
+        </a>
+        <a href="orders.html" class="nav-item">
+            <i class="fas fa-utensils"></i>
+            <span>Pedidos</span>
+        </a>
+        <button class="nav-item logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Salir</span>
+        </button>
+    </nav>
+
+    <script>
+        // Lógica para el estado activo de los enlaces de la barra de navegación
+        const navLinks = document.querySelectorAll(".navbar a");
+        navLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+                navLinks.forEach((nav) => nav.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+
+        // Manejo del botón de cerrar sesión
+        document.querySelector('.logout-btn').addEventListener('click', () => {
+            if (confirm('¿Estás seguro que deseas cerrar sesión?')) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
+
