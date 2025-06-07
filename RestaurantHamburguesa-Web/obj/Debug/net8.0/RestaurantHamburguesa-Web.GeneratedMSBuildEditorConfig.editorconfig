@@ -9,35 +9,35 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RestaurantHamburguesa_Web
 build_property.RootNamespace = RestaurantHamburguesa_Web
-build_property.ProjectDir = C:\Users\betom\Source\Repos\RestaurantHamburguesa-Web-Repo\RestaurantHamburguesa-Web\
+build_property.ProjectDir = E:\1A-REIKO-2025\RestaurantHamburguesa-Web\RestaurantHamburguesa-Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\betom\Source\Repos\RestaurantHamburguesa-Web-Repo\RestaurantHamburguesa-Web
+build_property.MSBuildProjectDirectory = E:\1A-REIKO-2025\RestaurantHamburguesa-Web\RestaurantHamburguesa-Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Areas/Waiter/Views/Home/Index.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Waiter/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV2FpdGVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Areas/Waiter/Views/Home/Ticket.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Waiter/Views/Home/Ticket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV2FpdGVyXFZpZXdzXEhvbWVcVGlja2V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Areas/Waiter/Views/Orders/Index.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Waiter/Views/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV2FpdGVyXFZpZXdzXE9yZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Views/Home/Index.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Views/Login/Login.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/betom/Source/Repos/RestaurantHamburguesa-Web-Repo/RestaurantHamburguesa-Web/Views/Shared/LayoutWaiters.cshtml]
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Views/Shared/LayoutWaiters.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFdhaXRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
