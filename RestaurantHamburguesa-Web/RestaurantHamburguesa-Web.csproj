@@ -8,9 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\imgs\mexicanBurger.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Chef\" />
     <Folder Include="Areas\Admin\" />
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\imgs\mexicanBurger.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

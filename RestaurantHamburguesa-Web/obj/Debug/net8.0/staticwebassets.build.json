@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nQNytXFsviJdg2F8W6msRKhs7nqlgnpKXdRh+rF91jY=",
+  "Hash": "Kn76H2z8+u80ILB0my8vPqEZaoLzSyaxLUAgZEQgrBo=",
   "Source": "RestaurantHamburguesa-Web",
   "BasePath": "_content/RestaurantHamburguesa-Web",
   "Mode": "Default",
@@ -34,25 +34,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\styles.css"
-    },
-    {
-      "Identity": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\wwwroot\\imgs\\mexicanBurger.png",
-      "SourceId": "RestaurantHamburguesa-Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\wwwroot\\",
-      "BasePath": "_content/RestaurantHamburguesa-Web",
-      "RelativePath": "imgs/mexicanBurger.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\imgs\\mexicanBurger.png"
     }
   ]
 }
