@@ -1302,7 +1302,7 @@ header h1 i {
   background: var(--primary-orange);
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 1rem;    
   border-radius: 8px;
   font-weight: bold;
   display: flex;
