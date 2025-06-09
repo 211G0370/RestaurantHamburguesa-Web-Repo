@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tablero de Pedidos - Burger House</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="kanban-body">
+    <div class="header">
+        <img src="mexicanBurger.png" alt="Logo" class="logo" width="70em" />
+        <h1>Mexican Grill - Pedidos Activos</h1>
+    </div>
+
+    <div class="kanban-board">
+        <!-- Columna Pendientes -->
+        <div class="column pendientes">
+            <div class="column-header">
+                <span> Pendientes</span>
+                <span class="contador-tickets">3</span>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket-header">
+                    <div class="ticket-number">Ticket #01</div>
+                    <div class="ticket-time">12:30 PM</div>
+                </div>
+
+                <div class="mesa-mesero">
+                    <div class="info-item">
+                        <span class="info-label">Mesa 7</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mesero:</span>
+                        Ana García
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <div class="producto-item">
+                        <span class="producto-nombre">Hamburguesa Clásica</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Papas Fritas</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Coca Cola</span>
+                        <span class="producto-cantidad">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna En Proceso -->
+        <div class="column proceso">
+            <div class="column-header">
+                En Proceso
+                <span class="contador-tickets">2</span>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket-header">
+                    <div class="ticket-number">Ticket #02</div>
+                    <div class="ticket-time">12:30 PM</div>
+                </div>
+
+                <div class="mesa-mesero">
+                    <div class="info-item">
+                        <span class="info-label">Mesa 6</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mesero:</span>
+                        Ana García
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <div class="producto-item">
+                        <span class="producto-nombre">Hamburguesa Clásica</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Papas Fritas</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Coca Cola</span>
+                        <span class="producto-cantidad">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Listos -->
+        <div class="column listos">
+            <div class="column-header">
+                Listos
+                <span class="contador-tickets">1</span>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket-header">
+                    <div class="ticket-number">Ticket #06</div>
+                    <div class="ticket-time">12:15 PM</div>
+                </div>
+
+                <div class="mesa-mesero">
+                    <div class="info-item">
+                        <span class="info-label">Mesa 5</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mesero:</span>
+                        José Hernández
+                    </div>
+                </div>
+
+                <div class="productos">
+                    <div class="producto-item">
+                        <span class="producto-nombre">Hamburguesa Pollo</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Papas Fritas</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                    <div class="producto-item">
+                        <span class="producto-nombre">Limonada</span>
+                        <span class="producto-cantidad">2</span>
+                    </div>
+                </div>
+
+                <button class="notify-button"
+                        onclick="notifyWaiter('José Hernández', '5', '#006')">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    <span>Notificar al Mesero</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function notifyWaiter(waiterName, tableNumber, ticketNumber) {
+          // Verificar si el navegador soporta notificaciones
+          if (!("Notification" in window)) {
+            alert("Este navegador no soporta notificaciones de escritorio");
+            return;
+          }
+
+          // Solicitar permiso para mostrar notificaciones
+          Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+              const notification = new Notification("¡Pedido Listo!", {
+                body: `Mesero ${waiterName}: El pedido ${ticketNumber} de la mesa ${tableNumber} está listo para servir`,
+                icon: "mexicanBurger.png",
+              });
+
+              // También podemos mostrar una alerta en caso de que las notificaciones estén desactivadas
+              console.log(
+                `Notificación enviada a ${waiterName} para la mesa ${tableNumber}`
+              );
+            }
+          });
+        }
+    </script>
+</body>
+</html>

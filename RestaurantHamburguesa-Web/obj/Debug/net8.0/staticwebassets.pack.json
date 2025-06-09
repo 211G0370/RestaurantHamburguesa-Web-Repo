@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\css\\styles.css"
     },
     {
-      "Id": "E:\\1A-REIKO-2025\\RestaurantHamburguesa-Web\\RestaurantHamburguesa-Web\\wwwroot\\imgs\\mexicanBurger.png",
-      "PackagePath": "staticwebassets\\imgs\\mexicanBurger.png"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RestaurantHamburguesa-Web.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

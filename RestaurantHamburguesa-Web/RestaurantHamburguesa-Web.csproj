@@ -8,9 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Chef\" />
-    <Folder Include="Areas\Admin\" />
+    <Content Remove="wwwroot\imgs\burger.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\imgs\burger.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

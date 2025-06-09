@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\1A-REIKO-2025\RestaurantHamburguesa-Web\RestaurantHamburguesa-Web
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Chef/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2hlZlxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/1A-REIKO-2025/RestaurantHamburguesa-Web/RestaurantHamburguesa-Web/Areas/Waiter/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV2FpdGVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración - Mexican Grill</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="admin-body">
+    <header class="admin-header">
+        <img src="mexicanBurger.png" alt="Logo" class="logo" width="70" />
+        <h1>Administración Mexican Grill</h1>
+    </header>
+
+    <nav class="admin-nav">
+        <button class="nav-tab active" onclick="showTab('waiters')">
+            <i class="fas fa-users"></i>
+            <span>Meseros</span>
+        </button>
+        <button class="nav-tab" onclick="showTab('tables')">
+            <i class="fas fa-chair"></i>
+            <span>Mesas</span>
+        </button>
+        <button class="nav-tab" onclick="showTab('products')">
+            <i class="fas fa-hamburger"></i>
+            <span>Productos</span>
+        </button>
+    </nav>
+
+    <main class="admin-container">
+        <!-- Sección de Gestión de Meseros -->
+        <section id="waiters" class="admin-section active">
+            <div class="section-header">
+                <h2><i class="fas fa-users"></i> Gestión de Meseros</h2>
+                <button class="add-button" onclick="showModal('waiter-add')">
+                    <i class="fas fa-plus"></i> Agregar Mesero
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Fecha de Ingreso</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ana García</td>
+                            <td>ana.garcia@mexicangrill.com</td>
+                            <td>(555) 123-4567</td>
+                            <td>01/01/2024</td>
+                            <td><span class="status-badge active">Activo</span></td>
+                            <td class="actions">
+                                <button class="action-btn edit"
+                                        onclick="showModal('waiter-edit', 1)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn delete"
+                                        onclick="showModal('waiter-delete', 1)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección de Gestión de Mesas -->
+        <section id="tables" class="admin-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chair"></i> Gestión de Mesas</h2>
+                <button class="add-button" onclick="showModal('table-add')">
+                    <i class="fas fa-plus"></i> Agregar Mesa
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Capacidad</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mesa 1</td>
+                            <td>4 personas</td>
+                            <td><span class="status-badge available">Disponible</span></td>
+                            <td class="actions">
+                                <button class="action-btn edit"
+                                        onclick="showModal('table-edit', 1)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn delete"
+                                        onclick="showModal('table-delete', 1)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección de Gestión de Productos -->
+        <section id="products" class="admin-section">
+            <div class="section-header">
+                <h2><i class="fas fa-hamburger"></i> Gestión de Productos</h2>
+                <div class="section-actions">
+                    <div class="filter-container">
+                        <select id="categoryFilter" onchange="filterProducts()">
+                            <option value="">Todas las categorías</option>
+                            <option value="Hamburguesas">Hamburguesas</option>
+                            <option value="Papas">Papas</option>
+                            <option value="Bebidas">Bebidas</option>
+                        </select>
+                    </div>
+                    <button class="add-button" onclick="showModal('product-add')">
+                        <i class="fas fa-plus"></i> Agregar Producto
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hamburguesa Clásica</td>
+                            <td>Hamburguesas</td>
+                            <td>
+                                Deliciosa hamburguesa con carne, lechuga, tomate y queso
+                            </td>
+                            <td>$120.00</td>
+                            <td class="actions">
+                                <button class="action-btn edit"
+                                        onclick="showModal('product-edit', 1)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="action-btn delete"
+                                        onclick="showModal('product-delete', 1)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales para Meseros -->
+    <dialog id="waiter-add" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agregar Mesero</h3>
+                <button class="close-button" onclick="closeModal('waiter-add')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'waiter-add')">
+                <div class="form-group">
+                    <label for="waiterName">Nombre</label>
+                    <input type="text" id="waiterName" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterEmail">Email</label>
+                    <input type="email" id="waiterEmail" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterPhone">Teléfono</label>
+                    <input type="tel" id="waiterPhone" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterStatus">Estado</label>
+                    <select id="waiterStatus" required>
+                        <option value="active">Activo</option>
+                        <option value="inactive">Inactivo</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('waiter-add')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="waiter-edit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Mesero</h3>
+                <button class="close-button" onclick="closeModal('waiter-edit')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'waiter-edit')">
+                <div class="form-group">
+                    <label for="waiterEditName">Nombre</label>
+                    <input type="text" id="waiterEditName" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterEditEmail">Email</label>
+                    <input type="email" id="waiterEditEmail" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterEditPhone">Teléfono</label>
+                    <input type="tel" id="waiterEditPhone" required />
+                </div>
+                <div class="form-group">
+                    <label for="waiterEditStatus">Estado</label>
+                    <select id="waiterEditStatus" required>
+                        <option value="active">Activo</option>
+                        <option value="inactive">Inactivo</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('waiter-edit')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="waiter-delete" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eliminar Mesero</h3>
+                <button class="close-button" onclick="closeModal('waiter-delete')">
+                    &times;
+                </button>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar este mesero?</p>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('waiter-delete')">
+                    Cancelar
+                </button>
+                <button class="btn-danger" onclick="handleDelete('waiter')">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modales para Mesas -->
+    <dialog id="table-add" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agregar Mesa</h3>
+                <button class="close-button" onclick="closeModal('table-add')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'table-add')">
+                <div class="form-group">
+                    <label for="tableNumber">Número de Mesa</label>
+                    <input type="number" id="tableNumber" required min="1" />
+                </div>
+                <div class="form-group">
+                    <label for="tableCapacity">Capacidad</label>
+                    <select id="tableCapacity" required>
+                        <option value="2">2 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="8">8 personas</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('table-add')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="table-edit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Mesa</h3>
+                <button class="close-button" onclick="closeModal('table-edit')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'table-edit')">
+                <div class="form-group">
+                    <label for="tableEditNumber">Número de Mesa</label>
+                    <input type="number" id="tableEditNumber" required min="1" />
+                </div>
+                <div class="form-group">
+                    <label for="tableEditCapacity">Capacidad</label>
+                    <select id="tableEditCapacity" required>
+                        <option value="2">2 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="6">6 personas</option>
+                        <option value="8">8 personas</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('table-edit')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="table-delete" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eliminar Mesa</h3>
+                <button class="close-button" onclick="closeModal('table-delete')">
+                    &times;
+                </button>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar esta mesa?</p>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('table-delete')">
+                    Cancelar
+                </button>
+                <button class="btn-danger" onclick="handleDelete('table')">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Modales para Productos -->
+    <dialog id="product-add" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agregar Producto</h3>
+                <button class="close-button" onclick="closeModal('product-add')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'product-add')">
+                <div class="form-group">
+                    <label for="productName">Nombre del Producto</label>
+                    <input type="text" id="productName" required />
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Categoría</label>
+                    <select id="productCategory" required>
+                        <option value="Hamburguesas">Hamburguesas</option>
+                        <option value="Papas">Papas</option>
+                        <option value="Bebidas">Bebidas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Descripción</label>
+                    <textarea id="productDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Precio</label>
+                    <input type="number"
+                           id="productPrice"
+                           required
+                           min="0"
+                           step="0.01" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('product-add')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="product-edit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Producto</h3>
+                <button class="close-button" onclick="closeModal('product-edit')">
+                    &times;
+                </button>
+            </div>
+            <form class="modal-form" onsubmit="handleSubmit(event, 'product-edit')">
+                <div class="form-group">
+                    <label for="productEditName">Nombre del Producto</label>
+                    <input type="text" id="productEditName" required />
+                </div>
+                <div class="form-group">
+                    <label for="productEditCategory">Categoría</label>
+                    <select id="productEditCategory" required>
+                        <option value="Hamburguesas">Hamburguesas</option>
+                        <option value="Papas">Papas</option>
+                        <option value="Bebidas">Bebidas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productEditDescription">Descripción</label>
+                    <textarea id="productEditDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productEditPrice">Precio</label>
+                    <input type="number"
+                           id="productEditPrice"
+                           required
+                           min="0"
+                           step="0.01" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                            class="btn-secondary"
+                            onclick="closeModal('product-edit')">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog id="product-delete" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eliminar Producto</h3>
+                <button class="close-button" onclick="closeModal('product-delete')">
+                    &times;
+                </button>
+            </div>
+            <p>¿Estás seguro de que deseas eliminar este producto?</p>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeModal('product-delete')">
+                    Cancelar
+                </button>
+                <button class="btn-danger" onclick="handleDelete('product')">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll(".admin-section").forEach((section) => {
+                section.classList.remove("active");
+            });
+
+            document.querySelectorAll(".nav-tab").forEach((tab) => {
+                tab.classList.remove("active");
+            });
+
+            document.getElementById(tabId).classList.add("active");
+            document
+                .querySelector(`.nav-tab[onclick="showTab('${tabId}')"]`)
+                .classList.add("active");
+        }
+
+        function showModal(modalId, itemId = null) {
+            const modal = document.getElementById(modalId);
+            if (itemId) {
+                // Aquí se cargarían los datos del item para editar
+                console.log(`Cargar datos del item ${itemId}`);
+            }
+            modal.showModal();
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).close();
+        }
+
+        function handleSubmit(event, formId) {
+            event.preventDefault();
+            // Aquí iría la lógica para guardar los datos
+            console.log(`Guardando formulario ${formId}`);
+            closeModal(formId);
+        }
+
+        function handleDelete(type) {
+            // Aquí iría la lógica para eliminar el elemento
+            console.log(`Eliminando ${type}`);
+            closeModal(`${type}-delete`);
+        }
+
+        function filterProducts() {
+            const category = document.getElementById("categoryFilter").value;
+            // Aquí iría la lógica para filtrar productos
+            console.log(`Filtrando por categoría: ${category}`);
+        }
+    </script>
+</body>
+</html>
